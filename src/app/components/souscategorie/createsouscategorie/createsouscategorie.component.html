@@ -1,0 +1,187 @@
+
+
+ 	
+        <!-- HEADER START -->
+
+   
+   
+   <!-- OUR PROJECT START -->
+   <div class="section-full mobile-page-padding p-t80 p-b30 square_shape2" >
+    <div class="container">
+        <!-- TITLE START -->
+        <div class="section-head">
+            <div class="mt-separator-outer separator-left">
+                <div class="mt-separator">
+                    <h2 class="text-uppercase sep-line-one "><span class="font-weight-300 text-primary">Create</span> Our sOUS Categories</h2>
+                </div>
+            </div>
+        </div>                   
+        <!-- TITLE END --> 
+  
+            <div class="section-content">
+  
+                 <div class="portfolio-wrap row mfp-gallery product-stamp clearfix">
+                    <!-- COLUMNS 1 -->
+                    <div class=" col-md-3 col-sm-6 ">
+                        <div class="bg-gray p-a60">
+                            <div class="header-nav navbar-collapse ">
+                                <ul class=" nav navbar-nav  text-uppercase">
+                                    <li class="sub-menu">
+                                      <a href=""> Dashboard Admin</a>
+                                                                                     
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:;">Gestion User</a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="user/index">Consulte User</a>
+                                            </li>                                    
+                                           
+                                            <li>
+                                                <a href="user/:userId/edit">Update user</a>
+                                            </li>                                            
+                                            <li>
+                                                <a href="user/:userId/view">View user</a>
+                                            </li>
+                                        </ul>
+                                    </li>  
+                                    <li>
+                                        <a href="javascript:;">Gestion Products</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="">Add Products</a></li>
+                                            <li><a href="">Update products</a></li>
+                                            <li><a href="">View Products</a></li>
+                                        </ul>                                                                                                                                              
+                                    </li>
+
+                                        <li>
+                                            <a href="javascript:;">Gestion Catrgories</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="">Add Categories</a></li>
+                                                <li><a href="">Update categories</a></li>
+                                                <li><a href="">View categories</a></li>
+                                            </ul>                                                                                                                                              
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">Gestion sousCatrgories</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="">Add sousCategories</a></li>
+                                                <li><a href="">Update souscategories</a></li>
+                                                <li><a href="">View souscategories</a></li>
+                                            </ul>                                                                                                                                              
+                                        </li>
+                                    <li>
+                                        <a href="javascript:;">Gestion consultation</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="">consulte consultation</a></li>
+                                            <li><a href="">Accepte consultation</a></li>
+                                            <li><a href="">Refuse consultation</a></li>
+                                        </ul>                                    
+                                    </li> 
+                                    
+                                    <li>
+                                        <a href="javascript:;">Gestion Devis</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="">consulte Devis</a></li>
+                                            <li><a href=""> Calcul Devis</a></li>
+                                        </ul>                                    
+                                    </li>         
+  
+                                    <li>
+                                        <a href="javascript:;">Gestion rendez-vous</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="">consulte rendez-vous</a></li>
+                                            <li><a href="">Accepte rendez-vous</a></li>
+                                            <li><a href="">Refuse rendez-vous</a></li>                            
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:;">Gestion Etude Projet</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="">consulte Etude Projet</a></li>
+                                            <li><a href="">Etudier Demande</a></li>
+                                            <li><a href="">Archiver Demande</a></li>                            
+                                        </ul>
+                                    </li>
+                                                                  
+                                </ul>
+                            </div>                        
+                        </div>            
+                    </div>
+                    <!-- COLUMNS 2 -->
+                    <div class="  cat-2 col-md-9 col-sm-6 m-b30">
+                        <form [formGroup]="form" (ngSubmit)="submit()" >
+
+                            <div class="form-group">
+
+                                <label> CategorieName</label>
+                                <select
+                                [(ngModel)]="categorie.Name"
+                          
+                                  type="text"
+                                  formControlName="Name"
+                                  class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f['Name'].errors }"
+                                >
+                                <option *ngFor="let categorie of categories" >{{categorie.Name}}</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+
+                            <label> CategorieId</label>
+                            <select
+                            [(ngModel)]="categorie.id"
+                      
+                              type="text"
+                              formControlName="categorie"
+                              class="form-control"
+                              [ngClass]="{ 'is-invalid': submitted && f['categorie'].errors }"
+                            >
+                            <option *ngFor="let categorie of categories" >{{categorie.id}}</option>
+                    </select>
+                    </div>
+
+                            <div class="form-group">
+                                <label for="body">Nom SousCategorie:</label>
+                                <input 
+                                id="Titre" 
+                                type="Titre" 
+                                formControlName="Titre"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f['Titre'].errors }"> 
+                                <div *ngIf="submitted && f['Titre'].errors" class="invalid-feedback">
+                                  <div *ngIf="f['Titre'].errors['required']" class="alert alert-danger">Nom SousCategorie is required</div>
+                                </div>
+                                
+                            </div>
+                  
+                  
+                         
+                  
+                       
+                            <button class="btn btn-success" type="submit"   >Create</button>
+                            <br>
+                            <br>
+                            <button class="btn btn-warning" type="button"  [routerLink]="['/souscategorie/index']" >Back To List</button>
+                        </form> 
+                    </div>
+                    
+              
+                    
+                                                 
+                 </div>
+  
+            </div>
+        
+    </div>
+    <div class="hilite-title text-left p-l50 text-uppercase text-pop-up-top">
+        <strong>sous Categories</strong>
+    </div>                
+  </div>   
+  <!-- OUR PROJECT END -->
+  
+
+
+
